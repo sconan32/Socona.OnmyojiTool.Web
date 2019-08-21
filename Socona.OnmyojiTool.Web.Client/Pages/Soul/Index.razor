@@ -1,0 +1,47 @@
+﻿@page "/soul/"
+@using Socona.OnmyojiTool.Data
+@inject HttpClient Http
+
+<h3>御魂</h3>
+
+@if (souls == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>图像</th>
+                <th>类型</th>
+                <th>说明</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var soul in souls)
+            {
+                <tr>
+                    <td>@soul.Name</td>
+                    <td>@soul.AvatarFileName</td>
+                    <td>@soul.Type</td>
+                    <td>@soul.MainEffect</td>
+                    <td><a>查看</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+    SoulItem[] souls;
+
+    protected override async Task OnInitAsync()
+    {
+        souls = await Http.GetJsonAsync<SoulItem[]>("api/soul");
+    }
+}

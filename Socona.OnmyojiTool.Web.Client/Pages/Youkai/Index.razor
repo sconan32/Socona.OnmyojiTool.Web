@@ -1,0 +1,48 @@
+﻿@page "/youkai/"
+@using Socona.OnmyojiTool.Data
+@inject HttpClient Http
+
+<h3>Index</h3>
+
+@if (youkais == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>稀有度</th>
+                <th>名称</th>
+                <th>图像</th>
+                <th>配音</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var yk in youkais)
+            {
+                <tr>
+                    <td>@yk.Rarity</td>
+                    <td>@yk.Name</td>
+                    <td>@yk.Id163</td>
+                    <td>@yk.Seiyou</td>
+                    <td><a href="/youkai/@yk.Id">查看</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+
+    IEnumerable<YoukaiItem> youkais;
+
+    protected override async Task OnInitAsync()
+    {
+        youkais = (await Http.GetJsonAsync<YoukaiItem[]>("api/youkai")).OrderBy(t => t.RarityOrder).ThenBy(u => u.Pinyin);
+    }
+}

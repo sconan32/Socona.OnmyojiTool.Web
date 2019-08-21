@@ -1,0 +1,45 @@
+﻿@page "/stagefamily/"
+@using Socona.OnmyojiTool.Data
+@inject HttpClient Http
+
+<h3>Index</h3>
+
+@if (stageFamilies == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>难度</th>
+                <th>类型</th>
+                <th>入口</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sf in stageFamilies)
+            {
+                <tr>
+                    <td>@sf.Name</td>
+                    <td>@sf.Difficulty</td>
+                    <td>@sf.TypeString</td>
+                    <td>@sf.Location</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    IEnumerable<StageFamilyItem> stageFamilies;
+
+    protected override async Task OnInitAsync()
+    {
+        stageFamilies = await Http.GetJsonAsync<StageFamilyItem[]>("api/stagefamily");
+    }
+
+}

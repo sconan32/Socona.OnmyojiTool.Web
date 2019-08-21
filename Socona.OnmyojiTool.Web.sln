@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.89
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Web.Server", "Socona.OnmyojiTool.Web.Server\Socona.OnmyojiTool.Web.Server.csproj", "{E9AD3AD8-4AF5-4DA6-B93E-3935F1C9AC0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Web.Client", "Socona.OnmyojiTool.Web.Client\Socona.OnmyojiTool.Web.Client.csproj", "{28A7EE09-BD4D-4AB8-B2A3-7131974EDFDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Web.Shared", "Socona.OnmyojiTool.Web.Shared\Socona.OnmyojiTool.Web.Shared.csproj", "{BE4CFA86-54F2-43C6-81A9-31B323647B37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Repository", "..\Socona.OnmyojiTool\Socona.OnmyojiTool.Repository\Socona.OnmyojiTool.Repository.csproj", "{F556546E-084C-4D7D-93FD-08B2407EDEC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Infrastructure", "..\Socona.OnmyojiTool\Socona.OnmyojiTool.Infrastructure\Socona.OnmyojiTool.Infrastructure.csproj", "{023A90B1-FCC7-4EC1-9472-3A0ABC078BC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Socona.OnmyojiTool.Data", "..\Socona.OnmyojiTool\Socona.OnmyojiTool.Data\Socona.OnmyojiTool.Data.csproj", "{40C56FAE-ADA1-47D4-A907-44FECE35B655}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9AD3AD8-4AF5-4DA6-B93E-3935F1C9AC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AD3AD8-4AF5-4DA6-B93E-3935F1C9AC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AD3AD8-4AF5-4DA6-B93E-3935F1C9AC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AD3AD8-4AF5-4DA6-B93E-3935F1C9AC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A7EE09-BD4D-4AB8-B2A3-7131974EDFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A7EE09-BD4D-4AB8-B2A3-7131974EDFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A7EE09-BD4D-4AB8-B2A3-7131974EDFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A7EE09-BD4D-4AB8-B2A3-7131974EDFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4CFA86-54F2-43C6-81A9-31B323647B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4CFA86-54F2-43C6-81A9-31B323647B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4CFA86-54F2-43C6-81A9-31B323647B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4CFA86-54F2-43C6-81A9-31B323647B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F556546E-084C-4D7D-93FD-08B2407EDEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F556546E-084C-4D7D-93FD-08B2407EDEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F556546E-084C-4D7D-93FD-08B2407EDEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F556546E-084C-4D7D-93FD-08B2407EDEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023A90B1-FCC7-4EC1-9472-3A0ABC078BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023A90B1-FCC7-4EC1-9472-3A0ABC078BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023A90B1-FCC7-4EC1-9472-3A0ABC078BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023A90B1-FCC7-4EC1-9472-3A0ABC078BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C56FAE-ADA1-47D4-A907-44FECE35B655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C56FAE-ADA1-47D4-A907-44FECE35B655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C56FAE-ADA1-47D4-A907-44FECE35B655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C56FAE-ADA1-47D4-A907-44FECE35B655}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A7A661B-808B-4C4E-9C2B-4E8516B75DAB}
+	EndGlobalSection
+EndGlobal

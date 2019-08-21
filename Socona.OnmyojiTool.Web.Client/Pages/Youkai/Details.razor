@@ -1,0 +1,71 @@
+﻿@page "/youkai/{Id:guid}"
+@using Socona.OnmyojiTool.Data
+@inject HttpClient Http
+
+
+
+@if (youkai == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>@youkai.Name</h2>
+    <hr />
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                名称
+            </dt>
+            <dd>
+                @youkai.Name
+                @if (youkai.IsOnmyoji)
+                {
+                    <span>师</span>
+                }
+                @if (youkai.IsLinkageYoukai)
+                {
+                    <span>联</span>
+                }
+                @if (youkai.IsTaskYoukai)
+                {
+                    <span>赏</span>
+                }
+                @if (youkai.IsFrogYoukai)
+                {
+                    <span>呱</span>
+                }
+
+
+            </dd>
+            <dt>
+                稀有度
+            </dt>
+            <dd>
+                @youkai.Rarity
+            </dd>
+            <dt>
+              配音
+            </dt>
+            <dd>
+                @youkai.Seiyou
+            </dd>
+         </dl>
+      
+    </div>
+    <YoukaiDistribution YoukaiId="@youkai.Id"></YoukaiDistribution>
+}
+@code
+{
+    [Parameter]
+    public Guid Id { get; set; }
+    YoukaiItem youkai;
+
+    protected override async Task OnInitAsync()
+    {       
+        youkai = await Http.GetJsonAsync<YoukaiItem>($"api/youkai/{Id}");
+       
+    }
+}

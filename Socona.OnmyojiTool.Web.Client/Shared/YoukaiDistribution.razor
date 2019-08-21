@@ -1,0 +1,41 @@
+﻿@using Socona.OnmyojiTool.Data
+@inject HttpClient Http
+
+
+<h3>妖怪分布</h3>
+
+@if (distributions == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>关卡</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dist in distributions)
+            {
+                <tr>
+                    <td>@dist.Name</td>
+                    <td>@dist.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public Guid? YoukaiId { get; private set; }
+
+    IEnumerable<YoukaiDistributionItem> distributions;
+    protected override async Task OnInitAsync()
+    {
+        distributions = await Http.GetJsonAsync<YoukaiDistributionItem[]>($"api/youkaidistribution/youkai/{YoukaiId}");
+    }
+}
